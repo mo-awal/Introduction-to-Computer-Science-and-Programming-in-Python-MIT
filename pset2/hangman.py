@@ -12,7 +12,7 @@
 import random
 import string
 
-WORDLIST_FILENAME = 'C:\\Users\\V\\Documents\\MIT CS Code\\pset2\\words.txt'#"words.txt"
+WORDLIST_FILENAME = "words.txt"
 
 
 def load_words():
