@@ -130,12 +130,12 @@ def hangman(secret_word):
         
         # get input from the user
         guess = ''
-        while not guess.isalpha():        # this loop runs until the user enters a valid input, i.e. an alphabet or runs out of guesses
+        while not guess.isalpha():          # this loop runs until the user enters a valid input, i.e. an alphabet or runs out of guesses
             guess = input('Please guess a letter: ').lower()
 
             # if guess is not an alphabet
             if not guess.isalpha():
-                if num_warnings:          # if the user still has warnings left, we sutract 1 from num_warnings
+                if num_warnings:            # if the user still has warnings left, we sutract 1 from num_warnings
                     num_warnings -= 1
                     print(f"Oops! That is not a valid letter. You have {num_warnings} warnings left:", get_guessed_word(secret_word, letters_guessed))
                 elif num_guesses:           # if the user has no warnings left but still has guesses left, we subtract 1 from num_guesses
@@ -164,7 +164,7 @@ def hangman(secret_word):
                 num_warnings -= 1
                 print(f"Oops! You have already guessed that letter. You have {num_warnings} warnings left: ")
             else:
-                num_guesses -= 1          # if the user has no warnings left, we subtract 1 from num_guesses
+                num_guesses -= 1            # if the user has no warnings left, we subtract 1 from num_guesses
         
         # adding guess to letters_guessed
         letters_guessed.append(guess)
@@ -275,7 +275,7 @@ def hangman_with_hints(secret_word):
         print("Available letters:", get_available_letters(letters_guessed))
         
         guess = ''
-        while not guess.isalpha():    # while guess is not an alphabet
+        while not guess.isalpha():          # while guess is not an alphabet
             guess = input('Please guess a letter: ').lower()
 
             # if the user enters *, we print all matching words
@@ -285,10 +285,10 @@ def hangman_with_hints(secret_word):
                 break
             # if guess is not an alphabet
             elif not guess.isalpha():
-                if num_warnings:          # if the user still has warnings left, we sutract 1 from num_warnings
+                if num_warnings:            # if the user still has warnings left, we sutract 1 from num_warnings
                     num_warnings -= 1
                     print(f"Oops! That is not a valid letter. You have {num_warnings} warnings left:", get_guessed_word(secret_word, letters_guessed))
-                elif num_guesses:         # if the user has no warnings left but still has guesses left, we subtract 1 from num_guesses
+                elif num_guesses:           # if the user has no warnings left but still has guesses left, we subtract 1 from num_guesses
                     num_guesses -= 1
                     print(f'You have {num_guesses} guesses left.')
             
@@ -349,8 +349,8 @@ if __name__ == "__main__":
     # To test part 2, comment out the pass line above and
     # uncomment the following two lines.
     
-    secret_word = choose_word(wordlist)
-    hangman(secret_word)
+    # secret_word = choose_word(wordlist)
+    # hangman(secret_word)
 
     # print(is_word_guessed('apple', ['e', 'i', 'k', 'p', 'r', 's', 'a', 'l']))
     # print(get_guessed_word('apple', ['e', 'i', 'k', 'p', 'r', 's']))
@@ -372,5 +372,5 @@ if __name__ == "__main__":
     # To test part 3 re-comment out the above lines and 
     # uncomment the following two lines. 
     
-    # secret_word = choose_word(wordlist)
-    # hangman_with_hints(secret_word)
+    secret_word = choose_word(wordlist)
+    hangman_with_hints(secret_word)
